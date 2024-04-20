@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:post_app/model/post_screen.dart';
 import 'package:post_app/screen/blog_screen.dart';
+import 'package:post_app/screen/password_screen.dart';
 import 'package:post_app/screen/quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -58,6 +59,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
               child: const Text("Blog Screen"),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PasswordScreen(),
+                  ),
+                );
+              },
+              child: const Text("Password Screen"),
             ),
           ],
         ));
