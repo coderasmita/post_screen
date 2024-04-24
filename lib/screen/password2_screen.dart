@@ -1,46 +1,39 @@
 import 'package:flutter/material.dart';
 
-class PasswordScreen extends StatefulWidget {
-  const PasswordScreen({super.key});
+class PasswordTwoScreen extends StatefulWidget {
+  const PasswordTwoScreen({super.key});
 
   @override
-  State<PasswordScreen> createState() => _PasswordScreenState();
+  State<PasswordTwoScreen> createState() => _PasswordTwoScreenState();
 }
 
-class _PasswordScreenState extends State<PasswordScreen> {
+class _PasswordTwoScreenState extends State<PasswordTwoScreen> {
   var isVisible = true;
-  var textFiled = "Asmita";
+  var textFiled = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Password Screen"),
-      ),
+      appBar: AppBar(),
       body: Column(
         children: [
           TextField(
-            obscureText: isVisible,
+            obscureText: true,
             decoration: InputDecoration(
               suffix: InkWell(
                 onTap: () {
-                  setState(() {
-                    isVisible = !isVisible;
-                  });
+                  isVisible = !isVisible;
+                  setState(() {});
                 },
                 child:
                     Icon(isVisible ? Icons.visibility : Icons.visibility_off),
               ),
-              border: const OutlineInputBorder(),
+              border: OutlineInputBorder(),
             ),
             onChanged: (value) {
               textFiled = value;
               setState(() {});
             },
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text("Hello $textFiled"),
+          )
         ],
       ),
     );
